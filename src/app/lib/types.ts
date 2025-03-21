@@ -1,6 +1,16 @@
 import { ReactNode } from 'react';
 import { CaptureMethod, PaymentMethod } from '@mollie/api-client';
 
+// Product types
+export interface Product {
+    id: string;
+    name: string;
+    description: string;
+    price: string;
+    currency: string;
+    quantity?: number;
+}
+
 // Mollie Context types
 export type MollieInstance = {
     createComponent: (type: string) => {

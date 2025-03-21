@@ -3,6 +3,7 @@
 import { Flex, Heading, Text, Card, Table, Select } from '@radix-ui/themes';
 import { useState } from 'react';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import type { Product } from '@/app/lib/types';
 
 // Currency symbols
 const CURRENCY_SYMBOLS = {
@@ -13,32 +14,11 @@ const CURRENCY_SYMBOLS = {
     CHF: 'fr',
 };
 
-// Product data
-const PRODUCTS = [
-    {
-        id: 1,
-        name: 'Product 1',
-        description: 'An expensive product',
-        quantity: 1,
-        price: 200,
-    },
-    {
-        id: 2,
-        name: 'Product 2',
-        description: 'A cheap product',
-        quantity: 1,
-        price: 10,
-    },
-    {
-        id: 3,
-        name: 'Product 3',
-        description: 'Another cheap product',
-        quantity: 1,
-        price: 10,
-    },
-];
+interface ShoppingCartProps {
+    items?: Product[];
+}
 
-export default function ShoppingCart() {
+export default function ShoppingCart({ items = [] }: ShoppingCartProps) {
     const [currency, setCurrency] = useState('EUR');
     const searchParams = useSearchParams();
     const pathname = usePathname();
@@ -79,8 +59,8 @@ export default function ShoppingCart() {
     };
 
     // Calculate total
-    const total = PRODUCTS.reduce(
-        (sum, product) => sum + product.price * product.quantity,
+    const total = items.reduce(
+        (sum, item) => sum + parseFloat(item.price) * (item.quantity || 1),
         0
     );
 
@@ -126,22 +106,22 @@ export default function ShoppingCart() {
                                 </Table.ColumnHeaderCell>
                             </Table.Row>
 
-                            {PRODUCTS.map((product) => (
-                                <Table.Row key={product.id}>
+                            {items.map((item) => (
+                                <Table.Row key={item.id}>
                                     <Table.Cell>
                                         <Flex direction="column">
-                                            <Text>{product.name}</Text>
+                                            <Text>{item.name}</Text>
                                             <Text
                                                 size="1"
                                                 color="gray"
                                             >
-                                                {product.description}
+                                                {item.description}
                                             </Text>
                                         </Flex>
                                     </Table.Cell>
-                                    <Table.Cell>{product.quantity}</Table.Cell>
+                                    <Table.Cell>{item.quantity || 1}</Table.Cell>
                                     <Table.Cell>
-                                        {formatPrice(product.price)}
+                                        {formatPrice(parseFloat(item.price) * (item.quantity || 1))}
                                     </Table.Cell>
                                 </Table.Row>
                             ))}

@@ -8,6 +8,7 @@ import { Providers } from '@/app/components/ui/providers.jsx';
 import Script from 'next/script';
 
 import { MollieProvider } from './lib/MollieContext';
+import { CartProvider } from './lib/CartContext';
 
 export const metadata: Metadata = {
     title: 'Mollie Demo App',
@@ -34,26 +35,28 @@ export default function RootLayout({
                         radius="large"
                     >
                         {/* <ThemePanel /> */}
-                        <Container size="4">
-                            <Section
-                                pt="0"
-                                pb="4"
-                            >
-                                <Navbar />
-                            </Section>
-                            <Section
-                                pt="4"
-                                pb="4"
-                            >
-                                <MollieProvider>{children}</MollieProvider>
-                            </Section>
-                            <Section
-                                pt="4"
-                                pb="0"
-                            >
-                                <Footer />
-                            </Section>
-                        </Container>
+                        <CartProvider>
+                            <Container size="4">
+                                <Section
+                                    pt="0"
+                                    pb="4"
+                                >
+                                    <Navbar />
+                                </Section>
+                                <Section
+                                    pt="4"
+                                    pb="4"
+                                >
+                                    <MollieProvider>{children}</MollieProvider>
+                                </Section>
+                                <Section
+                                    pt="4"
+                                    pb="0"
+                                >
+                                    <Footer />
+                                </Section>
+                            </Container>
+                        </CartProvider>
                     </Theme>
                 </Providers>
                 <Script

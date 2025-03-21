@@ -8,6 +8,7 @@ import React from 'react';
 
 // Lib
 import { CheckoutVariant } from '@/app/lib/types';
+import { useCart } from '@/app/lib/CartContext';
 
 // Client Components
 import CheckoutButton from './checkoutbutton';
@@ -20,16 +21,29 @@ import ShoppingCart from './shoppingcart';
 // The form itself is a client component (to make use of client-side JavaScript), but the address and payment methods are server components
 // The form is submitted to the createPayment function when the CheckoutButton is clicked
 
+interface CheckoutFormProps {
+    address: React.ReactNode;
+    hostedmethods: React.ReactNode;
+}
+
 export default function CheckoutForm({
     address,
     hostedmethods,
-}: {
-    address: React.ReactNode;
-    hostedmethods: React.ReactNode;
-}) {
+}: CheckoutFormProps) {
+    const { items } = useCart();
     // Use React State to switch between hosted and component payment methods
     const [checkoutVariant, setCheckoutVariant] =
         React.useState<CheckoutVariant>('hosted');
+
+    if (items.length === 0) {
+        return (
+            <Flex direction="column" m="6" align="center" justify="center">
+                <Heading mb="4">Your cart is empty</Heading>
+                <p className="text-gray-600 dark:text-gray-400">Add some items to your cart to proceed with checkout.</p>
+            </Flex>
+        );
+    }
+
     return (
         // The form data is sent to the createPayment function when the form is submitted
         <form>
@@ -53,7 +67,7 @@ export default function CheckoutForm({
                         direction="column"
                         gap="2"
                     >
-                        <ShoppingCart />
+                        <ShoppingCart items={items} />
                         <Heading
                             size="3"
                             mt="2"
