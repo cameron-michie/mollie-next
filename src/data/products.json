@@ -1,44 +1,44 @@
 [
   {
     "id": "3745120f-8ed2-4230-966e-e8293309ba3c",
-    "name": "GlitzGlow Shimmer Scarf",
-    "description": "A stylish and trendy fashion item.",
+    "name": "Scarf",
+    "description": "A scarf to keep you warm.",
     "price": "99.99",
-    "currency": "euro"
+    "currency": "EUR"
   },
   {
     "id": "2c983462-9f92-4fc7-aaf1-ee1137f1a7f3",
-    "name": "Luxe Luminosity Lariat",
-    "description": "A stylish and trendy fashion item.",
+    "name": "Cravat",
+    "description": "Stylish and trendy",
     "price": "99.99",
-    "currency": "euro"
+    "currency": "EUR"
   },
   {
     "id": "b4643907-dd40-413d-93af-8dd63fd0a34b",
-    "name": "LuxeVelvet Chic Boots",
-    "description": "A stylish and trendy fashion item.",
+    "name": "Tall Boots",
+    "description": "For wading or walking.",
     "price": "50.00",
-    "currency": "euro"
+    "currency": "EUR"
   },
   {
     "id": "492f2328-587c-498c-94d0-509aa4b3c4dc",
-    "name": "Luxe Bliss Scarf Set",
-    "description": "A stylish and trendy fashion item.",
+    "name": "Purse",
+    "description": "Made of solid gold",
     "price": "50.00",
-    "currency": "euro"
+    "currency": "EUR"
   },
   {
     "id": "1c8d1820-3243-4a07-b419-0866f7e750d9",
-    "name": "Luxe Velvet Jacket",
-    "description": "A stylish and trendy fashion item.",
+    "name": "Brown Jacket",
+    "description": "Grandpa style",
     "price": "150.00",
-    "currency": "euro"
+    "currency": "EUR"
   },
   {
     "id": "1332d1fc-ba96-4c8c-b878-ce65738a082e",
-    "name": "\"ChicLuxe CozyWrap\"",
-    "description": "A stylish and trendy fashion item.",
+    "name": "Semi-detached property in Manhatten",
+    "description": "A five-bed, two bathroom period property",
     "price": "200.00",
-    "currency": "euro"
+    "currency": "EUR"
   }
 ]

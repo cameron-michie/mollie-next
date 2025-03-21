@@ -1,10 +1,3 @@
-// import { permanentRedirect } from 'next/navigation'
-
-// export default function Home() {
-//   return (
-//     permanentRedirect("/checkout")
-//   );
-// }
 'use client';
 
 import { useState } from 'react';
