@@ -1,0 +1,94 @@
+{
+  "resource": "order",
+  "id": "ord_1.6yydfz",
+  "profileId": "pfl_k49k3HvxbT",
+  "method": null,
+  "amount": {
+    "value": "49.99",
+    "currency": "EUR"
+  },
+  "status": "created",
+  "isCancelable": false,
+  "metadata": null,
+  "createdAt": "2025-03-24T11:54:10+00:00",
+  "expiresAt": "2025-04-21T11:54:10+00:00",
+  "mode": "test",
+  "locale": "en_GB",
+  "billingAddress": {
+    "streetAndNumber": "43 Kingsway",
+    "postalCode": "L380SD",
+    "city": "Liverpool",
+    "country": "GB",
+    "givenName": "John",
+    "familyName": "Doe",
+    "email": "john.doe@example.com"
+  },
+  "shopperCountryMustMatchBillingCountry": false,
+  "orderNumber": "1234567",
+  "redirectUrl": "https://example.org/redirect",
+  "webhookUrl": "https://example.org/webhook",
+  "lines": [
+    {
+      "resource": "orderline",
+      "id": "odl_3.ir8uvd",
+      "orderId": "ord_1.6yydfz",
+      "name": "Demo Product",
+      "sku": null,
+      "type": "physical",
+      "status": "created",
+      "metadata": null,
+      "isCancelable": false,
+      "quantity": 1,
+      "quantityShipped": 0,
+      "amountShipped": {
+        "value": "0.00",
+        "currency": "EUR"
+      },
+      "quantityRefunded": 0,
+      "amountRefunded": {
+        "value": "0.00",
+        "currency": "EUR"
+      },
+      "quantityCanceled": 0,
+      "amountCanceled": {
+        "value": "0.00",
+        "currency": "EUR"
+      },
+      "shippableQuantity": 0,
+      "refundableQuantity": 0,
+      "cancelableQuantity": 0,
+      "unitPrice": {
+        "value": "49.99",
+        "currency": "EUR"
+      },
+      "vatRate": "21.00",
+      "vatAmount": {
+        "value": "8.68",
+        "currency": "EUR"
+      },
+      "totalAmount": {
+        "value": "49.99",
+        "currency": "EUR"
+      },
+      "createdAt": "2025-03-24T11:54:10+00:00"
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "https://api.mollie.com/v2/orders/ord_1.6yydfz",
+      "type": "application/hal+json"
+    },
+    "dashboard": {
+      "href": "https://my.mollie.com/dashboard/org_19247067/orders/ord_1.6yydfz",
+      "type": "text/html"
+    },
+    "checkout": {
+      "href": "https://www.mollie.com/checkout/order/1.6yydfz",
+      "type": "text/html"
+    },
+    "documentation": {
+      "href": "https://docs.mollie.com/reference/v2/orders-api/create-order",
+      "type": "text/html"
+    }
+  }
+}

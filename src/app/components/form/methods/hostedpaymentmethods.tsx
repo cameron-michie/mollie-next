@@ -21,7 +21,7 @@ export default async function HostedPaymentMethodCards({
     country?: string;
 }) {
     const methods = await mollieGetMethods(currency, country);
-
+    console.log("Hosted methods recalled from api: ", methods);
     return (
         <>
             <Card m="1">

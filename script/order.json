@@ -1,0 +1,38 @@
+{
+    "amount": {
+        "currency": "EUR",
+        "value": "49.99"
+    },
+    "orderNumber": "1234567",
+    "lines": [
+        {
+            "name": "Demo Product",
+            "quantity": 1,
+            "unitPrice": {
+                "currency": "EUR",
+                "value": "49.99"
+            },
+            "totalAmount": {
+                "currency": "EUR",
+                "value": "49.99"
+            },
+            "vatAmount": {
+                "currency": "EUR",
+                "value": "8.68"
+            },
+            "vatRate": "21.00"
+        }
+    ],
+    "billingAddress": {
+        "givenName": "John",
+        "familyName": "Doe",
+        "email": "john.doe@example.com",
+        "streetAndNumber": "43 Kingsway",
+        "city": "Liverpool",
+        "country": "GB",
+        "postalCode": "L380SD"
+    },
+    "locale": "en_GB",
+    "redirectUrl":"https://example.org/redirect",
+    "webhookUrl":"https://example.org/webhook"
+}

@@ -69,12 +69,29 @@ export async function validateCurrency(currency: string) {
     }
 }
 
+const ALLOWED_COUNTRIES = [
+  { code: 'BE', name: 'Belgium' },
+  { code: 'NL', name: 'Netherlands' },
+  { code: 'DE', name: 'Germany' },
+  { code: 'GB', name: 'United Kingdom' }
+] as const;
+
 export async function validateCountry(country: string) {
-    const currencySchema = z.string().toUpperCase().length(2);
-    try {
-        const result = currencySchema.parse(country);
-        return result;
-    } catch (error) {
-        throw new Error(`No valid country.`);
+    const countryCode = country.toUpperCase();
+    const isAllowed = ALLOWED_COUNTRIES.some(c => c.code === countryCode);
+    
+    if (!isAllowed) {
+        throw new Error('Country not supported. Please select from: Belgium, Netherlands, Germany, or United Kingdom');
     }
+    
+    return countryCode;
 }
+// export async function validateCountry(country: string) {
+//     const currencySchema = z.string().toUpperCase().length(2);
+//     try {
+//         const result = currencySchema.parse(country);
+//         return result;
+//     } catch (error) {
+//         throw new Error(`No valid country.`);
+//     }
+// }

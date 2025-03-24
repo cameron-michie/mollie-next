@@ -1,0 +1,1 @@
+{"status":422,"title":"Unprocessable Entity","detail":"Order line 1 is invalid. Invalid amount value for field vatAmount","field":"lines.1.vatAmount","_links":{"documentation":{"href":"https://docs.mollie.com/overview/handling-errors","type":"text/html"}}}
